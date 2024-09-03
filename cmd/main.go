@@ -1,22 +1,17 @@
 package main
 
 import (
+	"os"
 	"fmt"
-	"github.com/dkaman/cogs/internal/config"
+
+	"github.com/dkaman/cogs/internal/commands"
+
+	_ "github.com/dkaman/cogs/internal/commands/collection"
 )
 
 func main() {
-	c, err := config.New(
-		config.WithJSONConfigFile("./config.json"),
-		config.WithEnvVars(),
-	)
-	if err != nil {
-		fmt.Printf("error with config: %s", err)
-		return
+	if err := commands.Root(os.Args[1:]); err != nil {
+		fmt.Printf("error running command: %s\n", err)
+		os.Exit(1)
 	}
-
-	var o int
-	c.Get("option", &o)
-
-	fmt.Printf("c: %v\n", o)
 }
