@@ -7,6 +7,7 @@ import (
 	"github.com/dkaman/cogs/internal/commands"
 
 	_ "github.com/dkaman/cogs/internal/commands/listfolders"
+	_ "github.com/dkaman/cogs/internal/commands/createfolder"
 )
 
 func main() {
