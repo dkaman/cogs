@@ -3,16 +3,15 @@ package commands
 import (
 	"errors"
 	"flag"
+	"fmt"
 	"io"
 	"log/slog"
 	"os"
-	"fmt"
 
 	"github.com/dkaman/cogs/internal/config"
 
 	discogs "github.com/dkaman/discogs-golang"
 	"github.com/dkaman/reg"
-	// flag "github.com/spf13/pflag"
 )
 
 const (
@@ -85,7 +84,7 @@ func initApp() (app *App, err error) {
 	return
 }
 
-//lol this one's goofy
+// lol this one's goofy
 func initCmdLine() (subcommand string, subcommandArgs []string, err error) {
 	args := flag.Args()
 	if len(args) < 1 {

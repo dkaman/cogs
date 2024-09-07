@@ -6,7 +6,7 @@ import (
 
 	"github.com/dkaman/cogs/internal/commands"
 
-	_ "github.com/dkaman/cogs/internal/commands/collection"
+	_ "github.com/dkaman/cogs/internal/commands/listfolders"
 )
 
 func main() {
